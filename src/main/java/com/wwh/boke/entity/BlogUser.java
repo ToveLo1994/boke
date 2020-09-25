@@ -5,6 +5,8 @@ import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -20,7 +22,7 @@ import lombok.experimental.Accessors;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
-public class User implements Serializable {
+public class BlogUser implements Serializable {
 
 private static final long serialVersionUID=1L;
 
@@ -69,8 +71,9 @@ private static final long serialVersionUID=1L;
     /**
      * 是否锁定： 0-->没有锁定； 1-->被锁定
      */
-    @TableField("locked")
-    private Integer locked;
+    @TableField("is_delete")
+    @TableLogic
+    private Integer isDelete;
 
 
 }

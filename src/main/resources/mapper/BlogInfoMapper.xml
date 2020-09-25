@@ -17,12 +17,13 @@
         <result column="blog_comment_status" property="blogCommentStatus" />
         <result column="blog_create_time" property="blogCreateTime" />
         <result column="blog_update_time" property="blogUpdateTime" />
+        <result column="version" property="version" />
         <result column="is_delete" property="isDelete" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        blog_id, blog_title, blog_url, blog_preface, blog_content, blog_category_id, blog_category_name, blog_tags, blog_status, blog_views, blog_comment_status, blog_create_time, blog_update_time, is_delete
+        blog_id, blog_title, blog_url, blog_preface, blog_content, blog_category_id, blog_category_name, blog_tags, blog_status, blog_views, blog_comment_status, blog_create_time, blog_update_time, version, is_delete
     </sql>
 
 </mapper>

@@ -1,10 +1,10 @@
 package com.wwh.boke.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.*;
+
 import java.util.Date;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -103,9 +103,17 @@ private static final long serialVersionUID=1L;
     private Date blogUpdateTime;
 
     /**
+     * version 乐观锁
+     */
+    @TableField("version")
+    @Version
+    private Integer version;
+
+    /**
      * 是否删除：0-->未删除；1-->删除
      */
     @TableField("is_delete")
+    @TableLogic
     private Integer isDelete;
 
 

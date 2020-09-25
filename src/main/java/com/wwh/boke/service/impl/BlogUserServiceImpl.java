@@ -1,8 +1,8 @@
 package com.wwh.boke.service.impl;
 
-import com.wwh.boke.entity.User;
-import com.wwh.boke.dao.UserMapper;
-import com.wwh.boke.service.UserService;
+import com.wwh.boke.entity.BlogUser;
+import com.wwh.boke.dao.BlogUserMapper;
+import com.wwh.boke.service.BlogUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2020-09-25
  */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+public class BlogUserServiceImpl extends ServiceImpl<BlogUserMapper, BlogUser> implements BlogUserService {
 
 }

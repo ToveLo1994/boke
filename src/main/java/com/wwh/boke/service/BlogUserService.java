@@ -1,6 +1,6 @@
 package com.wwh.boke.service;
 
-import com.wwh.boke.entity.User;
+import com.wwh.boke.entity.BlogUser;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author wwh
  * @since 2020-09-25
  */
-public interface UserService extends IService<User> {
+public interface BlogUserService extends IService<BlogUser> {
 
 }

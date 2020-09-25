@@ -5,6 +5,8 @@ import java.util.Date;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableField;
 import java.io.Serializable;
+
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -100,6 +102,7 @@ private static final long serialVersionUID=1L;
      * 是否删除：0-->未删除；1-->删除
      */
     @TableField("is_delete")
+    @TableLogic
     private Integer isDelete;
 
 

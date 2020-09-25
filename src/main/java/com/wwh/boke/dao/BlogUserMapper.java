@@ -1,6 +1,6 @@
 package com.wwh.boke.dao;
 
-import com.wwh.boke.entity.User;
+import com.wwh.boke.entity.BlogUser;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author wwh
  * @since 2020-09-25
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface BlogUserMapper extends BaseMapper<BlogUser> {
 
 }
