@@ -24,7 +24,8 @@ import java.util.List;
 * @UpdateRemark:   修改内容 修改时更新
 * @Version:        1.0
 */
-@Service("userDetailsService")
+
+@Service
 public class CostumUserDetailsService implements UserDetailsService {
 
     @Autowired
@@ -51,3 +52,4 @@ public class CostumUserDetailsService implements UserDetailsService {
     }
 
 }
+

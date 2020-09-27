@@ -11,6 +11,11 @@ spring:
     # 应用名称
     name: boke
 
+  security:
+    user:
+      name: "admin"
+      password: "admin"
+
   thymeleaf:
     prefix:
       # 访问template下的html文件需要配置模板
