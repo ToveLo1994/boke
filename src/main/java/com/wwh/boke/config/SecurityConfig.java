@@ -1,6 +1,8 @@
 package com.wwh.boke.config;
 
 import com.wwh.boke.security.CostumUserDetailsService;
+import com.wwh.boke.security.JwtAuthenticationFilter;
+import com.wwh.boke.security.JwtAuthorizationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -9,6 +11,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
@@ -41,10 +44,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin() 								    // 定义当需要用户登录时候，转到的登录页面。
+        http.addFilter(new JwtAuthenticationFilter(authenticationManager()))
+                .formLogin() 								    // 定义当需要用户登录时候，转到的登录页面。
                 .loginPage("/login")	 					// 设置登录页面
                 .loginProcessingUrl("/user/login") 			// 自定义的登录接口
-                .defaultSuccessUrl("/home").permitAll()		// 登录成功之后，默认跳转的页面
+
+                //.addFilter(new JwtAuthorizationFilter(authenticationManager(), userDetailsService))
+                //.defaultSuccessUrl("/home").permitAll()		// 登录成功之后，默认跳转的页面
+                // 前后端分离是 STATELESS，故 session 使用该策略
+
                 .and().authorizeRequests()					// 定义哪些URL需要被保护、哪些不需要被保护
                 .antMatchers("/", "/index","/user/login").permitAll()		// 设置所有人都可以访问登录页面
                 .anyRequest().authenticated() 				// 任何请求,登录后可以访问

@@ -26,7 +26,7 @@ import lombok.extern.slf4j.Slf4j;
 */
 @Slf4j
 @Component("myAuthenctiationSuccessHandler")
-public class MyAuthenctiationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
+public class MyAuthentiationSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
     @Autowired
     private ObjectMapper objectMapper;

@@ -20,6 +20,16 @@ public class ResponseEntity {
     //返回体内容
     private Object data;
 
+    public ResponseEntity( int status, String msg, Object data){
+        this.status = status;
+        this.msg = msg;
+        this.data = data;
+    }
+
+    public ResponseEntity(){
+
+    }
+
     public int getStatus() {
         return status;
     }
